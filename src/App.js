@@ -30,7 +30,6 @@ class App extends Component {
     this.removeFromCart = this.removeFromCart.bind(this);
   }
   addToCart(item) {
-    console.log('add', item);
     this.setState({
       cart: this.state.cart.concat(item)
     })
@@ -49,7 +48,10 @@ class App extends Component {
           addToCart={this.addToCart}
           items={this.state.items}
         />
-        <Receipt remove={this.removeFromCart} cart={this.state.cart}/>
+        <Receipt
+          remove={this.removeFromCart}
+          cart={this.state.cart}
+        />
       </div>
     )
   }
